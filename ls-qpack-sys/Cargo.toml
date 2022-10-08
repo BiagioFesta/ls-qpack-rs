@@ -1,0 +1,18 @@
+[package]
+name = "ls-qpack-sys"
+version = "0.1.0-alpha"
+license = "MIT OR Apache-2.0"
+authors = ["Biagio Festa"]
+edition = "2021"
+description = "QPACK (RFC 9204) Rust binding to C library ls-qpack"
+keywords = ["qpack", "quic", "http3", "rfc-9204", "network"]
+repository = "https://github.com/BiagioFesta/ls-qpack-rs"
+readme = "../README.md"
+workspace = ".."
+
+[build-dependencies]
+bindgen = "0.59"
+cmake = "0.1"
+
+[dependencies]
+libc = "0.2.134"

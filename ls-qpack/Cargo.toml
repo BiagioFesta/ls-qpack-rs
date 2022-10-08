@@ -1,0 +1,15 @@
+[package]
+name = "ls-qpack"
+version = "0.1.0-alpha"
+license = "MIT OR Apache-2.0"
+authors = ["Biagio Festa"]
+edition = "2021"
+description = "QPACK Field Compression for HTTP/3 (RFC 9204)"
+keywords = ["qpack", "quic", "http3", "rfc-9204", "network"]
+repository = "https://github.com/BiagioFesta/ls-qpack-rs"
+readme = "../README.md"
+workspace = ".."
+
+[dependencies]
+libc = "0.2"
+ls-qpack-sys = { path = "../ls-qpack-sys" }

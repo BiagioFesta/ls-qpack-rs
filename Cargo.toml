@@ -1,0 +1,2 @@
+[workspace]
+members = [ "ls-qpack-sys", "ls-qpack" ]
