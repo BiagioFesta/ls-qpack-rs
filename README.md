@@ -1,4 +1,10 @@
 # ls-qpack
+[![crates.io](https://img.shields.io/crates/v/ls-qpack.svg)](https://crates.io/crates/ls-qpack)
+[![docs.rs](https://docs.rs/ls-qpack/badge.svg)](https://docs.rs/ls-qpack)
+
+
+
+
 **QPACK**: Field Compression for HTTP/3 
 ([*RFC 9204*](https://datatracker.ietf.org/doc/rfc9204/))
 
