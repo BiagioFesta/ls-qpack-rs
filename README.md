@@ -1,4 +1,4 @@
-# ls-qpack-rs
+# ls-qpack
 **QPACK**: Field Compression for HTTP/3 
 ([*RFC 9204*](https://datatracker.ietf.org/doc/rfc9204/))
 
