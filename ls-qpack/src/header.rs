@@ -197,9 +197,9 @@ impl<'a> LsxpackHeader<'a> {
 
         let header_sys = ls_qpack_sys::lsxpack_header {
             buf: header.buffer.as_mut_ptr() as *mut i8,
-            name_offset: header.name_offset as u16,
+            name_offset: header.name_offset as i32,
             name_len: header.name_len as u16,
-            val_offset: header.value_offset as u16,
+            val_offset: header.value_offset as i32,
             val_len: header.value_len as u16,
             ..Default::default()
         };
