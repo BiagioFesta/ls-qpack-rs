@@ -4,16 +4,16 @@ use std::env;
 use std::path::PathBuf;
 
 fn main() {
+    let out_dir = PathBuf::from(env::var("OUT_DIR").unwrap());
     let ls_qpack_dep_dir = PathBuf::from("deps/ls-qpack");
 
-    let ls_qpack_build_dir = cmake::Config::new(&ls_qpack_dep_dir)
-        .build_target("ls-qpack")
-        .build()
-        .join("build");
+    cmake::Config::new(&ls_qpack_dep_dir)
+        .define("LSQPACK_BIN", "OFF")
+        .build();
 
     println!(
         "cargo:rustc-link-search=native={}",
-        ls_qpack_build_dir.display()
+        out_dir.join("lib").display()
     );
     println!("cargo:rustc-link-lib=static=ls-qpack");
 
@@ -24,6 +24,7 @@ fn main() {
         .size_t_is_usize(true)
         .layout_tests(true)
         .generate_comments(false)
+        .clang_arg(format!("-I{}", out_dir.join("include").display()))
         .header(
             ls_qpack_dep_dir
                 .join("lsqpack.h")
@@ -40,8 +41,7 @@ fn main() {
         );
 
     let bindings = builder.generate().expect("Unable to generate bindings");
-    let out_path = PathBuf::from(env::var("OUT_DIR").unwrap());
     bindings
-        .write_to_file(out_path.join("bindings.rs"))
+        .write_to_file(out_dir.join("bindings.rs"))
         .expect("Couldn't write bindings!");
 }
