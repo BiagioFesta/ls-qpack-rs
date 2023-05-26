@@ -1,6 +1,6 @@
 [package]
 name = "ls-qpack-sys"
-version = "0.1.1-alpha"
+version = "0.1.1"
 license = "MIT OR Apache-2.0"
 authors = ["Biagio Festa"]
 edition = "2021"
