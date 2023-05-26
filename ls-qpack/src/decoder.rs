@@ -447,9 +447,11 @@ mod callbacks {
         header: *mut ls_qpack_sys::lsxpack_header,
         space: libc::size_t,
     ) -> *mut ls_qpack_sys::lsxpack_header {
+        const MAX_SPACE: usize = u16::MAX as usize;
+
         let mut hblock_ctx = unsafe { HeaderBlockCtx::from_void_ptr(hblock_ctx) };
 
-        if space > ls_qpack_sys::LSXPACK_MAX_STRLEN as usize {
+        if space > MAX_SPACE {
             todo!()
         }
 
