@@ -11,8 +11,8 @@ readme = "../README.md"
 workspace = ".."
 
 [build-dependencies]
-bindgen = "0.59"
-cmake = "0.1"
+bindgen = "0.66.1"
+cmake = "0.1.50"
 
 [dependencies]
-libc = "0.2.134"
+libc = "0.2.146"
