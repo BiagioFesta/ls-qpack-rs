@@ -275,6 +275,7 @@ impl Drop for InnerDecoder {
 mod callbacks {
     use crate::header::HeaderError;
     use crate::Header;
+    use std::ffi::c_char;
     use std::marker::PhantomPinned;
     use std::pin::Pin;
 
@@ -371,7 +372,7 @@ mod callbacks {
             this.decoding_buffer
                 .resize(space as usize, Default::default());
 
-            this.header.buf = this.decoding_buffer.as_mut_ptr() as *mut i8;
+            this.header.buf = this.decoding_buffer.as_mut_ptr() as *mut c_char;
             this.header.val_len = space;
         }
 

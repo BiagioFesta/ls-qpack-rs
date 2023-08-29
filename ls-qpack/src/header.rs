@@ -2,6 +2,7 @@
 
 use std::convert::TryFrom;
 use std::fmt::Debug;
+use std::ffi::c_char;
 
 /// Error during Header construction.
 pub enum HeaderError {
@@ -196,7 +197,7 @@ impl<'a> LsxpackHeader<'a> {
         debug_assert!(header.value_len < Header::MAX_LEN_VALUE);
 
         let header_sys = ls_qpack_sys::lsxpack_header {
-            buf: header.buffer.as_mut_ptr() as *mut i8,
+            buf: header.buffer.as_mut_ptr() as *mut c_char,
             name_offset: header.name_offset as i32,
             name_len: header.name_len as u16,
             val_offset: header.value_offset as i32,
