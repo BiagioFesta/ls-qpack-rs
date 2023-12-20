@@ -1,6 +1,6 @@
 [package]
 name = "ls-qpack"
-version = "0.1.3"
+version = "0.1.4"
 license = "MIT OR Apache-2.0"
 authors = ["Biagio Festa"]
 edition = "2021"
@@ -12,4 +12,4 @@ workspace = ".."
 
 [dependencies]
 libc = "0.2.146"
-ls-qpack-sys = { version = "0.1.3", path = "../ls-qpack-sys" }
+ls-qpack-sys = { version = "0.1.4", path = "../ls-qpack-sys" }
